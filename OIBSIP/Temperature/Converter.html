@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Temperature Converter</h1>
+        <div class="input-group">
+            <label for="temperature">Temperature:</label>
+            <input type="text" id="temperature" placeholder="Enter temperature">
+        </div>
+        <div class="input-group">
+            <label for="unit">Convert from:</label>
+            <select id="unit">
+                <option value="C">Celsius</option>
+                <option value="F">Fahrenheit</option>
+                <option value="K">Kelvin</option>
+            </select>
+        </div>
+        <center><button onclick="convertTemperature()">Convert</button></center>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function convertTemperature() {
+            const tempInput = document.getElementById('temperature').value;
+            const unit = document.getElementById('unit').value;
+            const resultElement = document.getElementById('result');
+            
+            if (isNaN(tempInput)) {
+                resultElement.innerHTML = 'Please enter a valid number';
+                return;
+            }
+            
+            const temp = parseFloat(tempInput);
+            let resultText = '';
+
+            switch (unit) {
+                case 'C':
+                    resultText = `${temp}°C = ${(temp * 9/5) + 32}°F = ${temp + 273.15}K`;
+                    break;
+                case 'F':
+                    resultText = `${temp}°F = ${(temp - 32) * 5/9}°C = ${((temp - 32) * 5/9) + 273.15}K`;
+                    break;
+                case 'K':
+                    resultText = `${temp}K = ${temp - 273.15}°C = ${(temp - 273.15) * 9/5 + 32}°F`;
+                    break;
+                default:
+                    resultText = 'Invalid unit';
+            }
+
+            resultElement.innerHTML = resultText;
+        }
+    </script>
+</body>
+</html>

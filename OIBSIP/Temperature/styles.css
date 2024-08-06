@@ -1,0 +1,53 @@
+body {
+    font-family: Cambria, Times, 'Times New Roman', serif;
+    padding: 150px;
+    margin: 50px;
+    background-color: rgba(159, 179, 215, 0.747);
+}
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 5px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+.input-group {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Times New Roman';
+}
+select, button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+}
+button {
+    padding: 10px 20px;
+    background-color: cadetblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: Cambria;
+    font-size: 20px;
+    width: 200px;
+}
+button:hover {
+    background-color: cadetblue;
+}
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
